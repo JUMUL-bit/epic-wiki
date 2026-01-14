@@ -1,0 +1,298 @@
+No worries at all — this is a **very common question**, and I’ll walk you through it **slowly, clearly, step-by-step**, with **exactly what to click and where to put things**.
+You do **NOT** need to be “good at JS” to use this. You’re just *plugging it in* 🙂
+
+---
+
+# 🧠 WHAT THE JS DOES (IN SIMPLE TERMS)
+
+The JavaScript files:
+
+* Make **dropdowns open/close**
+* Make **songs expandable**
+* Make the **search bar work**
+* (Optional) toggle **dark mode**
+
+You **do not write JS logic** — you just:
+
+1. Put the file in the right folder
+2. Link it in your HTML
+3. Use the correct class names
+
+That’s it.
+
+---
+
+# 1️⃣ STEP ONE: CREATE THE JS FOLDER
+
+Inside your project folder (`epic-wiki`):
+
+```
+epic-wiki/
+├── index.html
+├── characters.html
+├── songs.html
+├── gallery.html
+├── cast.html
+│
+├── css/
+│   └── style.css
+│
+├── js/   👈 CREATE THIS FOLDER
+│
+└── assets/
+```
+
+---
+
+# 2️⃣ STEP TWO: CREATE THE JS FILES
+
+Inside the `js` folder, create these files:
+
+### 📄 `songs.js`
+
+### 📄 `search.js`
+
+Make sure:
+
+* The names are **exact**
+* They end in `.js`
+* NOT `.txt`
+
+---
+
+# 3️⃣ STEP THREE: COPY THE CODE INTO EACH FILE
+
+## 🟦 `js/songs.js`
+
+This controls saga + song dropdowns.
+
+```javascript
+document.querySelectorAll(".saga-title").forEach(button => {
+  button.addEventListener("click", () => {
+    button.nextElementSibling.classList.toggle("open");
+  });
+});
+
+document.querySelectorAll(".song").forEach(song => {
+  song.addEventListener("click", () => {
+    song.nextElementSibling.classList.toggle("open");
+  });
+});
+```
+
+Save the file.
+
+---
+
+## 🔍 `js/search.js`
+
+This makes the search bar work.
+
+```javascript
+const searchInput = document.querySelector("#searchInput");
+
+if (searchInput) {
+  searchInput.addEventListener("keyup", function () {
+    const filter = searchInput.value.toLowerCase();
+    const items = document.querySelectorAll(".searchable");
+
+    items.forEach(item => {
+      const text = item.textContent.toLowerCase();
+      item.style.display = text.includes(filter) ? "" : "none";
+    });
+  });
+}
+```
+
+Save the file.
+
+---
+
+# 4️⃣ STEP FOUR: LINK THE JS FILES TO YOUR HTML
+
+⚠️ THIS IS THE MOST IMPORTANT PART
+
+JS **does nothing** unless it is linked.
+
+---
+
+## 🔗 Where to put the `<script>` tags
+
+In the HTML file where you want the feature, scroll to the **VERY BOTTOM**, right before:
+
+```html
+</body>
+```
+
+---
+
+## 🎶 For `songs.html`
+
+Add **both scripts**:
+
+```html
+<script src="js/songs.js"></script>
+<script src="js/search.js"></script>
+</body>
+```
+
+---
+
+## 🧍 For `characters.html`
+
+Only search is needed:
+
+```html
+<script src="js/search.js"></script>
+</body>
+```
+
+---
+
+## 🏠 For `index.html`, `gallery.html`, `cast.html`
+
+No JS required (optional).
+
+---
+
+# 5️⃣ STEP FIVE: USE THE CORRECT HTML CLASSES
+
+JS works by **class names**.
+If the class name is wrong → **nothing happens**.
+
+---
+
+## ✅ SAGA DROPDOWN STRUCTURE (REQUIRED)
+
+```html
+<button class="saga-title">Troy Saga</button>
+
+<div class="saga-content">
+  <button class="song">Just a Man</button>
+
+  <div class="lyrics searchable">
+    <p><strong>Characters:</strong> Odysseus</p>
+    <p>Lyrics go here</p>
+  </div>
+</div>
+```
+
+### 🔑 RULE
+
+| Element      | Required Class |
+| ------------ | -------------- |
+| Saga button  | `saga-title`   |
+| Saga content | `saga-content` |
+| Song button  | `song`         |
+| Lyrics       | `lyrics`       |
+
+---
+
+## 🔍 SEARCHABLE ITEMS
+
+Anything you want the search to filter **MUST HAVE**:
+
+```html
+class="searchable"
+```
+
+Example:
+
+```html
+<div class="card character searchable">
+```
+
+---
+
+# 6️⃣ STEP SIX: OPEN THE SITE CORRECTLY
+
+⚠️ **IMPORTANT**
+
+JavaScript will **NOT** work if you open files incorrectly.
+
+---
+
+## ❌ WRONG WAY
+
+Double-clicking:
+
+```
+songs.html
+```
+
+---
+
+## ✅ RIGHT WAY (Pick One)
+
+### Option A: Live Server (BEST)
+
+If using VS Code:
+
+1. Install **Live Server** extension
+2. Right-click `index.html`
+3. Click **Open with Live Server**
+
+---
+
+### Option B: Local Server (Simple)
+
+If you know basic terminal:
+
+```bash
+python -m http.server
+```
+
+Then open:
+
+```
+http://localhost:8000
+```
+
+---
+
+# 7️⃣ HOW TO DEBUG IF IT DOESN’T WORK
+
+### 1️⃣ Right-click page → Inspect → Console
+
+If you see:
+
+* ❌ Red errors → file path wrong
+* ❌ `null` errors → class missing
+
+### 2️⃣ Check file paths
+
+Make sure:
+
+```html
+<script src="js/songs.js"></script>
+```
+
+NOT:
+
+```html
+<script src="/js/songs.js"></script>
+```
+
+---
+
+# 8️⃣ QUICK CHECKLIST ✅
+
+✔ `js` folder exists
+✔ `.js` files inside
+✔ `<script>` linked at bottom
+✔ Correct class names
+✔ Opened via server
+✔ No console errors
+
+---
+
+# 🧩 WANT ME TO HELP LIVE?
+
+If you want, paste:
+
+* Your **songs.html**
+* Or a screenshot of your file tree
+
+And I’ll **fix it exactly** for you.
+
+You’re doing great — this stuff clicks fast once it works once 💙

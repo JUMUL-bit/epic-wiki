@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Songs | EPIC Wiki</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+<nav class="navbar">
+  <h1 class="logo">EPIC</h1>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="characters.html">Characters</a></li>
+    <li><a href="songs.html" class="active">Songs</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="cast.html">Cast</a></li>
+  </ul>
+</nav>
+
+<main class="container songs-layout">
+
+  <!-- LEFT: SAGAS -->
+  <div class="sagas">
+
+    <!-- SAGA 1: Troy -->
+    <div class="saga">
+      <button class="saga-title">Troy Saga</button>
+      <div class="saga-content">
+        <button class="song" data-title="The Horse and the Infant" data-characters="Odysseus, Zeus" data-lyrics="Lyrics of The Horse and the Infant...">The Horse and the Infant</button>
+        <button class="song" data-title="Just a Man" data-characters="Odysseus" data-lyrics="Lyrics of Just a Man...">Just a Man</button>
+      </div>
+    </div>
+
+    <!-- SAGA 2: Cyclops -->
+    <div class="saga">
+      <button class="saga-title">Cyclops Saga</button>
+      <div class="saga-content">
+        <button class="song" data-title="Polyphemus" data-characters="Polyphemus, Odysseus" data-lyrics="Lyrics of Polyphemus...">Polyphemus</button>
+        <button class="song" data-title="Survive" data-characters="Odysseus, Crew" data-lyrics="Lyrics of Survive...">Survive</button>
+      </div>
+    </div>
+
+    <!-- SAGA 3: Ocean -->
+    <div class="saga">
+      <button class="saga-title">Ocean Saga</button>
+      <div class="saga-content">
+        <button class="song" data-title="Storm" data-characters="Crew" data-lyrics="Lyrics of Storm...">Storm</button>
+        <button class="song" data-title="Luck Runs Out" data-characters="Odysseus, Eurylochus" data-lyrics="Lyrics of Luck Runs Out...">Luck Runs Out</button>
+      </div>
+    </div>
+
+    <!-- SAGA 4: Circe -->
+    <div class="saga">
+      <button class="saga-title">Circe Saga</button>
+      <div class="saga-content">
+        <button class="song" data-title="Puppeteer" data-characters="Circe" data-lyrics="Lyrics of Puppeteer...">Puppeteer</button>
+        <button class="song" data-title="Done For" data-characters="Circe, Odysseus" data-lyrics="Lyrics of Done For...">Done For</button>
+      </div>
+    </div>
+
+    <!-- SAGA 5: Underworld -->
+    <div class="saga">
+      <button class="saga-title">Underworld Saga</button>
+      <div class="saga-content">
+        <button class="song" data-title="The Underworld" data-characters="Odysseus" data-lyrics="Lyrics of The Underworld...">The Underworld</button>
+        <button class="song" data-title="No Longer You" data-characters="Tiresias" data-lyrics="Lyrics of No Longer You...">No Longer You</button>
+      </div>
+    </div>
+
+    <!-- SAGA 6: Thunder -->
+    <div class="saga">
+      <button class="saga-title">Thunder Saga</button>
+      <div class="saga-content">
+        <button class="song" data-title="Thunder Bringer" data-characters="Zeus" data-lyrics="Lyrics of Thunder Bringer...">Thunder Bringer</button>
+      </div>
+    </div>
+
+    <!-- SAGA 7: Wisdom -->
+    <div class="saga">
+      <button class="saga-title">Wisdom Saga</button>
+      <div class="saga-content">
+        <button class="song" data-title="Warrior of the Mind" data-characters="Athena" data-lyrics="Lyrics of Warrior of the Mind...">Warrior of the Mind</button>
+      </div>
+    </div>
+
+    <!-- SAGA 8: Vengeance -->
+    <div class="saga">
+      <button class="saga-title">Vengeance Saga</button>
+      <div class="saga-content">
+        <button class="song" data-title="Monster" data-characters="Odysseus" data-lyrics="Lyrics of Monster...">Monster</button>
+      </div>
+    </div>
+
+    <!-- SAGA 9: Ithaca -->
+    <div class="saga">
+      <button class="saga-title">Ithaca Saga</button>
+      <div class="saga-content">
+        <button class="song" data-title="King" data-characters="Odysseus" data-lyrics="Lyrics of King...">King</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT: SIDEBAR -->
+  <div class="sidebar">
+    <h2 id="songTitle">Select a song</h2>
+    <div class="characters" id="songCharacters"></div>
+    <pre id="songLyrics"></pre>
+  </div>
+
+</main>
+
+<footer>
+  <p>Fan-made Wiki • EPIC: The Musical</p>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="js/songs.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

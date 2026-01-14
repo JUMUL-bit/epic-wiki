@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cast | EPIC Wiki</title>
+  <link rel="stylesheet" href="css/style.css">
+  <button onclick="toggleDarkMode()">
+  Toggle Dark Mode
+</button>
+</head>
+<body>
+
+<nav class="navbar">
+  <h1 class="logo">EPIC</h1>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="characters.html">Characters</a></li>
+    <li><a href="songs.html">Songs</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="cast.html" class="active">Cast</a></li>
+  </ul>
+</nav>
+
+<main class="container">
+  <h2>Cast</h2>
+
+  <div class="card">
+    <h3>Jorge Rivera-Herrans</h3>
+    <p>Creator & Voice of Odysseus, Polyphemus, Winions, Ensmble</p>
+  </div>
+
+ <div class="card">
+    <h3>Talya Sindel</h3>
+    <p>Voice of Circe</p>
+  </div>
+  
+ <div class="card">
+    <h3>Miguel Veloso</h3>
+    <p>Voice of Telemachus</p>
+  </div>
+  
+ <div class="card">
+    <h3>Luke Holt</h3>
+    <p>Voice of Zeus, Elpenor, Ensemble</p>
+  </div>
+   
+ <div class="card">
+    <h3>Armando Julian</h3>
+    <p>Voice of Zeus, Elpenor, Ensemble</p>
+  </div>
+   
+ <div class="card">
+    <h3>Steven Rodriguez</h3>
+    <p>Voice of Zeus, Elpenor, Ensemble</p>
+  </div>
+  
+   
+ <div class="card">
+    <h3>Steven Dookie</h3>
+    <p>Voice of Zeus, Elpenor, Ensemble</p>
+  </div>
+   
+ <div class="card">
+    <h3>Teagan Earely</h3>
+    <p>Voice of Zeus, Elpenor, Ensemble</p>
+  </div>
+  
+   
+ <div class="card">
+    <h3>Ayron Alexander</h3>
+    <p>Voice of Zeus, Elpenor, Ensemble</p>
+  </div>
+   
+ <div class="card">
+    <h3>Kira Stone</h3>
+    <p>Voice of Zeus, Elpenor, Ensemble</p>
+  </div>
+   
+ <div class="card">
+    <h3>Troy Doherty</h3>
+    <p>Voice of Zeus, Elpenor, Ensemble</p>
+  </div>
+   
+ <div class="card">
+    <h3>Wanda Herrans</h3>
+    <p>Voice of Zeus, Elpenor, Ensemble</p>
+  </div>
+   
+ <div class="card">
+    <h3>Mason Olshavsky</h3>
+    <p>Voice of Zeus, Elpenor, Ensemble</p>
+  </div>
+   
+ <div class="card">
+    <h3> Anna Lea</h3>
+    <p>Voice of Zeus, Elpenor, Ensemble</p>
+  </div>
+   
+ <div class="card">
+    <h3>KJ Burkhauser</h3>
+    <p>Voice of Zeus, Elpenor, Ensemble</p>
+  </div>
+	
+   
+ <div class="card">
+    <h3>Barbara Wangui</h3>
+    <p>Voice of Zeus, Elpenor, Ensemble</p>
+  </div>
+  
+  
+  <!-- Add more cast members -->
+</main>
+
+<footer>
+  <p>Fan-made Wiki • EPIC: The Musical</p>
+</footer>
+<script>
+  // Apply saved theme on page load
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+  }
+
+  // Toggle function
+  function toggleDarkMode() {
+    document.body.classList.toggle("dark");
+
+    // Save theme
+    if (document.body.classList.contains("dark")) {
+      localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "light");
+    }
+  }
+</script>
+
+<script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+function loadSong(name) {
+  document.getElementById("songTitle").textContent = name;
+
+  fetch(`lyrics/${name}.txt`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("TXT not found");
+      }
+      return response.text();
+    })
+    .then(text => {
+      document.getElementById("lyricsBox").textContent = text;
+    })
+    .catch(error => {
+      document.getElementById("lyricsBox").textContent =
+        "Lyrics file missing or server not running.";
+      console.error(error);
+    });
+}

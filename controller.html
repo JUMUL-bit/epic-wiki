@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>EPIC Wiki Controller</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #eee;
+  margin: 0;
+  padding: 20px;
+}
+h2 { margin-bottom: 10px; }
+.card { background: #222; padding: 15px; border-radius: 10px; margin-bottom: 15px; }
+input, button, select { width: 100%; padding: 8px; margin-top: 5px; border-radius: 5px; border: none; }
+button { cursor: pointer; background: #555; color: #eee; }
+.preview { border: 2px solid #444; height: 200px; margin-top: 10px; overflow: hidden; border-radius: 10px; }
+.preview iframe { width: 100%; height: 100%; transform: scale(0.5); transform-origin: top left; width:200%; height:200%; }
+</style>
+</head>
+<body>
+
+<h2>🔒 EPIC Wiki Controller</h2>
+
+<div class="card">
+  <h3>Switch Page</h3>
+  <button onclick="goPage('index.html')">Home</button>
+  <button onclick="goPage('characters.html')">Characters</button>
+  <button onclick="goPage('songs.html')">Songs</button>
+  <button onclick="goPage('gallery.html')">Gallery</button>
+  <button onclick="goPage('cast.html')">Cast</button>
+</div>
+
+<div class="card">
+  <h3>Dark Mode</h3>
+  <button onclick="toggleDark()">Toggle Dark Mode</button>
+</div>
+
+<div class="card">
+  <h3>Edit Element Text</h3>
+  <input id="elementId" placeholder="Element ID">
+  <input id="elementText" placeholder="New text">
+  <button onclick="updateElement()">Update Text</button>
+</div>
+
+<div class="card">
+  <h3>Show / Hide Section</h3>
+  <input id="sectionId" placeholder="Section ID">
+  <button onclick="toggleSection()">Toggle Section</button>
+</div>
+
+<div class="card">
+  <h3>Live Preview (First Page)</h3>
+  <div class="preview">
+    <iframe src="index.html" id="preview"></iframe>
+  </div>
+</div>
+
+<script>
+// 🖥️ Functions for controller
+function goPage(page) {
+  localStorage.setItem("controller-page", page);
+}
+
+function toggleDark() {
+  const dark = localStorage.getItem("controller-dark") === "true";
+  localStorage.setItem("controller-dark", !dark);
+}
+
+function updateElement() {
+  const id = document.getElementById("elementId").value;
+  const text = document.getElementById("elementText").value;
+  let elements = JSON.parse(localStorage.getItem("controller-elements") || "{}");
+  elements[id] = text;
+  localStorage.setItem("controller-elements", JSON.stringify(elements));
+}
+
+function toggleSection() {
+  const id = document.getElementById("sectionId").value;
+  let sections = JSON.parse(localStorage.getItem("controller-show") || "{}");
+  sections[id] = !sections[id];
+  localStorage.setItem("controller-show", JSON.stringify(sections));
+}
+</script>
+
+</body>
+</html>
